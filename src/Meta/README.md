@@ -39,33 +39,13 @@ following regular expression \[-,''\]\[a-z,A-Z,_\]*
 Examples for identifier and number strings:
 
 ```
-identifiers:
+identifiers: aaaa, _aas_, ___SS
 
-aaaa
-_aas_
-Bss_AZZ
-____
+not identifiers: aaa34a, _aas_1, ds(dsd)ds
 
-nod identifiers:
+numbers: 1112, -12312, -0000
 
-aaa34a
-_aas_1
-$Bss_AZZ
-__*__?
-
-numbers:
-
-1112
--12312
--0000
-24324
-
-not numbers:
-
-+432
--223-
-----1
-00ad00
+not numbers: +432, -223-, 139d
 
 ```
 

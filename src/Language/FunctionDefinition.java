@@ -5,8 +5,6 @@ import Parsing.ASTNode;
 import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-import java.lang.reflect.ParameterizedType;
-
 public class FunctionDefinition extends ASTNode {
 
     public final Token identifier;

@@ -59,9 +59,7 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(FunctionDefinitionList definitionList) {
-        if (definitionList.type == FunctionDefinitionList.Type.EMPTY) {
-            return "";
-        } else if (definitionList.type == FunctionDefinitionList.Type.ONE) {
+        if (definitionList.type == FunctionDefinitionList.Type.ONE) {
             return definitionList.function.accept(this) + "\n";
         } else {
             return definitionList.function.accept(this) + "\n" + definitionList.list.accept(this);
@@ -70,7 +68,11 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(Program entry) {
-        return entry.definitions.accept(this) + entry.expression.accept(this);
+        if (entry.type.equals(Program.Type.EXPRESSION)) {
+            return entry.expression.accept(this);
+        } else {
+            return entry.definitions.accept(this) + entry.expression.accept(this);
+        }
     }
 
 }

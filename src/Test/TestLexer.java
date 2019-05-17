@@ -2,7 +2,7 @@ package Test;
 
 import Lexing.Lexer;
 import Utils.Carriage;
-import Errors.InterpreterException;
+import Errors.LexerException;
 import Lexing.Token;
 
 import Utils.CharacterArray;
@@ -40,7 +40,7 @@ public class TestLexer {
 
         try {
             lexer.run();
-        } catch (InterpreterException e) {
+        } catch (LexerException e) {
             System.out.println(e.getMessage());
             return;
         }

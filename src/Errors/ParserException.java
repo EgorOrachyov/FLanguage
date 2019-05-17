@@ -1,14 +1,14 @@
 package Errors;
 
-public class InterpreterException extends Exception {
+public class ParserException extends Exception {
 
     private final String message;
 
-    public InterpreterException(String message) {
+    public ParserException(String message) {
         this.message = message;
     }
 
-    public InterpreterException(String message, System name, int line) {
+    public ParserException(String message, String name, int line) {
         this.message = message + " " + name + ":" + line;
     }
 

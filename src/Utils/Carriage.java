@@ -18,6 +18,10 @@ public class Carriage<T> {
         current += 1;
     }
 
+    public void setIndex(int index) {
+        current = index;
+    }
+
     public T current() {
         return buffer[current];
     }

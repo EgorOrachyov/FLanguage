@@ -1,6 +1,6 @@
 package Errors;
 
-public class ErrorsMessage {
+public class ErrorMessage {
 
     public static final String SYNTAX_ERROR = "SYNTAX ERROR";
 

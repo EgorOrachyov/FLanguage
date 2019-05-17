@@ -44,7 +44,6 @@ public class TestPrintVisitor extends Assert {
                                                         )
                                                 )
                                         ),
-                                        new Token(TokenType.EOL, "\n", 0),
                                         new FunctionDefinitionList(
                                                 new FunctionDefinition(
                                                         new Token(TokenType.IDENTIFIER, "g", 1),
@@ -62,8 +61,7 @@ public class TestPrintVisitor extends Assert {
                                                                         )
                                                                 )
                                                         )
-                                                ),
-                                                new Token(TokenType.EOL, "\n", 1)
+                                                )
                                         )
                                 ),
                                 new Expression(

@@ -1,7 +1,7 @@
 package Lexing;
 
-import Errors.ErrorsMessage;
-import Errors.InterpreterException;
+import Errors.ErrorMessage;
+import Errors.LexerException;
 import Utils.Carriage;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class Lexer {
         this.source = carriage;
     }
 
-    public void run() throws InterpreterException {
+    public void run() throws LexerException {
         while (!source.end()) {
             match();
             source.advance();
@@ -28,7 +28,7 @@ public class Lexer {
         return tokens;
     }
 
-    private void match() throws InterpreterException {
+    private void match() throws LexerException {
 
         char c = source.current();
 
@@ -85,7 +85,7 @@ public class Lexer {
                 break;
 
             default:
-                throw new InterpreterException(ErrorsMessage.SYNTAX_ERROR);
+                throw new LexerException(ErrorMessage.SYNTAX_ERROR);
 
         }
     }
