@@ -4,12 +4,10 @@ import Lexing.Lexer;
 import Lexing.Carriage;
 import Errors.InterpreterException;
 import Lexing.Token;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RunWith(Parameterized.class)
 public class TestLexer {
@@ -29,7 +27,8 @@ public class TestLexer {
                 "16*4+(a-b)/2+(189%13)",
                 "g(x)={(f(x)+f((x/2)))}\n" +
                 "f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}\n" +
-                "g(10)"
+                "g(10)",
+                "__ew11\n1__w2,[123\n21]:{ddd},\n{dsss]"
         };
     }
 
