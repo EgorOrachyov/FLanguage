@@ -1,15 +1,12 @@
-package Lexing;
+package Utils;
 
-public class Carriage {
+public class Carriage<T> {
 
     private int current = 0;
-    private final char[] buffer;
+    private final T[] buffer;
 
-    public Carriage(String source) {
-        buffer = source.toCharArray();
-    }
 
-    public Carriage(char[] source) {
+    public Carriage(T[] source) {
         buffer = source;
     }
 
@@ -21,7 +18,7 @@ public class Carriage {
         current += 1;
     }
 
-    public char current() {
+    public T current() {
         return buffer[current];
     }
 

@@ -2,6 +2,7 @@ package Lexing;
 
 import Errors.ErrorsMessage;
 import Errors.InterpreterException;
+import Utils.Carriage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +10,10 @@ import java.util.List;
 public class Lexer {
 
     private int line = 0;
-    private final Carriage source;
+    private final Carriage<Character> source;
     private final List<Token> tokens = new ArrayList<>();
 
-    public Lexer(Carriage carriage) {
+    public Lexer(Carriage<Character> carriage) {
         this.source = carriage;
     }
 

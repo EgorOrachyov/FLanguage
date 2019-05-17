@@ -1,10 +1,11 @@
 package Test;
 
 import Lexing.Lexer;
-import Lexing.Carriage;
+import Utils.Carriage;
 import Errors.InterpreterException;
 import Lexing.Token;
 
+import Utils.CharacterArray;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -34,7 +35,7 @@ public class TestLexer {
 
     @Test
     public void test() {
-        Carriage carriage = new Carriage(source);
+        Carriage<Character> carriage = new Carriage<>(CharacterArray.convert(source));
         Lexer lexer = new Lexer(carriage);
 
         try {
