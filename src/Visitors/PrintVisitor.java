@@ -1,6 +1,7 @@
 package Visitors;
 
 import Language.*;
+import Lexing.Token;
 import Parsing.ASTVisitor;
 
 public class PrintVisitor implements ASTVisitor<String> {
@@ -17,7 +18,7 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(Language.BinaryExpression expression) {
-        return expression.expr1.accept(this) + '<' + expression.operator.getType() + '>' + expression.expr2.accept(this);
+        return "(" + expression.expr1.accept(this) + operator(expression.operator) + expression.expr2.accept(this) + ")";
     }
 
     @Override
@@ -36,9 +37,9 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(IfExpression expression) {
-        return '[' + expression.condition.accept(this) + "]?(" +
-                expression.ifTrue.accept(this)    + "):(" +
-                expression.ifFalse.accept(this)   + ")";
+        return '[' + expression.condition.accept(this) + "]?{" +
+                expression.ifTrue.accept(this)    + "}:{" +
+                expression.ifFalse.accept(this)   + "}";
     }
 
     @Override
@@ -73,6 +74,20 @@ public class PrintVisitor implements ASTVisitor<String> {
         } else {
             return entry.definitions.accept(this) + entry.expression.accept(this);
         }
+    }
+
+    private String operator(Token token) {
+        switch (token.getType()) {
+            case PLUS: return "+";
+            case MINUS: return "-";
+            case STAR: return "*";
+            case SLASH: return "/";
+            case PERCENT: return "%";
+            case GREATER: return ">";
+            case LESS: return "<";
+            case EQUAL: return "=";
+            default: return "";
+         }
     }
 
 }

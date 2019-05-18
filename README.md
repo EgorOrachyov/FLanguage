@@ -13,10 +13,11 @@ operation    = "+" | "-" | "*" | "/" | "%" | ">" | "<" | "="
 bin-expr     = "(" expr operation expr ")"
 arg-list     = expr | expr "," arg-list
 call-expr    = IDENTIFIER "(" arg-list ")"
-if-expr      = "[" expr "]" "?" "(" expr ")" ":" "(" expr ")"
+if-expr      = "[" expr "]" "?" "{" expr "}" ":" "{" expr "}"
 
 expr         = IDENTIFIER
              | NUMBER
+             | -NUMBER
              | bin-expr
              | call-expr
              | if-expr
@@ -34,8 +35,8 @@ program      = fun-def-list expr | expr
 * __IDENTIFIER__ - ascii-7 string, composed with the 
 following regular expression \[a-z,A-Z,_\]* and has non-zero length
 
-* __NUMBER__ - integer value, composed with the 
-following regular expression \[-,''\]\[a-z,A-Z,_\]*
+* __NUMBER__ - positive integer value, composed with the 
+following regular expression \[0-9\]* and has non-zero length
 
 Examples for identifier and number strings:
 
