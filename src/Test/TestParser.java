@@ -2,13 +2,19 @@ package Test;
 
 import Errors.LexerException;
 import Errors.ParserException;
+
 import Language.Program;
+
 import Lexing.Lexer;
 import Lexing.Token;
+
 import Parsing.Parser;
+
 import Utils.Carriage;
 import Utils.CharacterArray;
+
 import Visitors.PrintVisitor;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

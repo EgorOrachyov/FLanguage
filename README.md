@@ -42,13 +42,23 @@ Examples for identifier and number strings:
 
 ```
 identifiers: aaaa, _aas_, ___SS
-
 not identifiers: aaa34a, _aas_1, ds(dsd)ds
 
 numbers: 1112, -12312, -0000
-
 not numbers: +432, -223-, 139d
 
 ```
 
 ## Semantic rules
+
+The following rules defines the way, how the program and its data will be 
+actually executed and interpreted in runtime:
+
+* All variables have 32-bit integer type
+* All evaluations do not lead to overflow
+* All operations are equivalent to Java operations
+* Compare operations returns 1 or 0, whether the condition is true of false
+* If-expression executes its true branch whether the condition does not equal to
+0, otherwise it executes its false branch
+* Cll-expression performs call of defined function witt its name and arguments
+* All the expressions are evaluated from right to left
