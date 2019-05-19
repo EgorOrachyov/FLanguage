@@ -12,7 +12,6 @@ public class FunctionDefinition extends ASTNode {
     public final Expression funBody;
 
     public FunctionDefinition(Token id, ParamsList params, Expression body) {
-        super(ASTNodeType.FUN_DEF);
         identifier = id;
         paramsList = params;
         funBody = body;

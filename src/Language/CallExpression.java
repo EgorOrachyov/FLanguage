@@ -11,7 +11,6 @@ public class CallExpression extends ASTNode {
     public final ArgumentsList list;
 
     public CallExpression(Token t, ArgumentsList l) {
-        super(ASTNodeType.CALL_EXPR);
         token = t;
         list = l;
     }

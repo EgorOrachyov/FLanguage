@@ -21,7 +21,6 @@ public class Expression extends ASTNode {
     public final ASTNode expression;
 
     public Expression(Token t) {
-        super(ASTNodeType.EXPR);
         token = t;
         expression = null;
 
@@ -33,21 +32,18 @@ public class Expression extends ASTNode {
     }
 
     public Expression(BinaryExpression e) {
-        super(ASTNodeType.EXPR);
         type = Type.BIN_EXPR;
         token = null;
         expression = e;
     }
 
     public Expression(CallExpression e) {
-        super(ASTNodeType.EXPR);
         type = Type.CALL_EXPR;
         token = null;
         expression = e;
     }
 
     public Expression(IfExpression e) {
-        super(ASTNodeType.EXPR);
         type = Type.IF_EXPR;
         token = null;
         expression = e;

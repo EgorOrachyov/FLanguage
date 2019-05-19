@@ -11,7 +11,6 @@ public class IfExpression extends ASTNode {
     public final Expression ifFalse;
 
     public IfExpression(Language.Expression c, Language.Expression t, Language.Expression f) {
-        super(ASTNodeType.IF_EXPR);
         condition = c;
         ifTrue = t;
         ifFalse = f;

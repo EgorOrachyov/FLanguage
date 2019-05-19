@@ -17,14 +17,12 @@ public class ParamsList extends ASTNode {
     public final ParamsList list;
 
     public ParamsList(Token t) {
-        super(ASTNodeType.PARAM_LIST);
         type = Type.IDENTIFIER;
         token = t;
         list = null;
     }
 
     public ParamsList(Token t, ParamsList l) {
-        super(ASTNodeType.PARAM_LIST);
         type = Type.IDENTIFIER_AND_LIST;
         token = t;
         list = l;

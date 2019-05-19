@@ -16,14 +16,12 @@ public class ArgumentsList extends ASTNode {
     public final ArgumentsList list;
 
     public ArgumentsList(Language.Expression e) {
-        super(ASTNodeType.ARG_LIST);
         type = ArgumentsList.Type.EXPRESSION;
         expression = e;
         list = null;
     }
 
     public ArgumentsList(Language.Expression e, ArgumentsList l) {
-        super(ASTNodeType.ARG_LIST);
         type = ArgumentsList.Type.EXPRESSION_AND_LIST;
         expression = e;
         list = l;

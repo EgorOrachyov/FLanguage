@@ -16,14 +16,12 @@ public class Program extends ASTNode {
     public final Expression expression;
 
     public Program(Expression main) {
-        super(ASTNodeType.PROGRAM);
         type = Type.EXPRESSION;
         definitions = null;
         expression = main;
     }
 
     public Program(FunctionDefinitionList list, Expression main) {
-        super(ASTNodeType.PROGRAM);
         type = Type.DEF_LIST_AND_EXPRESSION;
         definitions = list;
         expression = main;
