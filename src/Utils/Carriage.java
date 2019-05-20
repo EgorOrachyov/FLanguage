@@ -1,13 +1,13 @@
 package Utils;
 
-public class Carriage<T> {
+public class Carriage {
 
     private int current = 0;
-    private final T[] buffer;
+    private final char[] buffer;
 
 
-    public Carriage(T[] source) {
-        buffer = source;
+    public Carriage(String source) {
+        buffer = source.toCharArray();
     }
 
     public boolean end() {
@@ -22,7 +22,7 @@ public class Carriage<T> {
         current = index;
     }
 
-    public T current() {
+    public char current() {
         return buffer[current];
     }
 

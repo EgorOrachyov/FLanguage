@@ -61,7 +61,7 @@ public class TestFunctionInfo extends Assert {
     @Test
     public void testFunctionInfoCollect() {
 
-        Lexer lexer = new Lexer(new Carriage<>(CharacterArray.convert(expected)));
+        Lexer lexer = new Lexer(new Carriage(expected));
 
         try {
             lexer.run();

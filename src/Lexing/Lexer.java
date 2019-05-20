@@ -10,10 +10,10 @@ import java.util.List;
 public class Lexer {
 
     private int line = 0;
-    private final Carriage<Character> source;
+    private final Carriage source;
     private final List<Token> tokens = new ArrayList<>();
 
-    public Lexer(Carriage<Character> carriage) {
+    public Lexer(Carriage carriage) {
         this.source = carriage;
     }
 

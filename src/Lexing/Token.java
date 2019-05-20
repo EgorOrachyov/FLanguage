@@ -9,7 +9,7 @@ public class Token {
     public Token(TokenType type, String lexeme, int line) {
         this.type = type;
         this.lexeme = lexeme;
-        this.line = line;
+        this.line = line + 1;
     }
 
     public TokenType getType() {

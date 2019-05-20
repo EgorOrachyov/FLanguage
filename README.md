@@ -1,7 +1,7 @@
 # FLanguage
 
-Functional integer expression base simple language with java based interpreter
-with basic error tracking and without byte-code generation or optimizations.
+Functional integer expression based simple language with java interpreter, 
+basic error tracking and without byte-code generation or optimizations.
 
 ## Features
 
@@ -46,9 +46,9 @@ program      = fun-def-list expr | expr
 ```
 
 * _IDENTIFIER_ - ascii-7 string, composed with the 
-following regular expression \[a-z,A-Z,_\]* and has non-zero length
+following regular expression \[a-z,A-Z,_\]* and has non-zero length.
 * _NUMBER_ - positive integer value, composed with the 
-following regular expression \[0-9\]* and has non-zero length
+following regular expression \[0-9\]* and has non-zero length.
 
 Examples for identifier and number strings:
 
@@ -91,12 +91,18 @@ generated in time of lexing, parsing or interpreting:
 ## Program example
 
 The following programs show how the language actually looks like with 
-results of the interpreting of this programs:
+results of the interpreting of this programs with error handling:
 
 ```java
 (2+2)
 
 Output: 4
+```
+
+```java
+(2+-2)
+
+Output: 0
 ```
 
 ```java
@@ -115,6 +121,65 @@ k(x,y,z,w)={(((x*y)*z)*w)}
 f(1,g(2,3,4),k(5,6,7,0))
 
 Output: 90
+```
+
+```java
+1 + 2 + 3 + 4 + 5
+
+SYNTAX ERROR
+```
+
+```java
+f(x)={y}
+f(10)
+
+PARAMETER NOT FOUND y:1
+```
+
+```java
+g(x)={f(x)}
+g(10)
+
+FUNCTION NOT FOUND f:1
+```
+
+```java
+g(x)={(x+1)}
+g(10,20)
+
+ARGUMENT NUMBER MISMATCH g:2
+```
+
+```java
+g(a,b)={(a/b)}
+g(10,0)
+
+RUNTIME ERROR (a/b):1
+```
+
+```java
+f(x)={(x+x)}
+f(x,y)={(x+y)}
+f(10)
+
+FUNCTION REDEFINITION f(x,y)={(x+y)}:2
+```
+
+```java
+f(x,x)={(x*x)}
+(10*13)
+
+PARAM REDEFINITION f(x,x)={(x*x)}:1
+```
+
+For example, the following lines of code allows to evaluate the
+10th Fibonacci number (note: (1) = 1 | (2) = 2 | n > 2, (n) = (n-1) + (n-2))
+
+```java
+f(x)={[(x>2)]?{(f((x-1))+f((x-2)))}:{1}}
+f(10)
+
+Output: 55
 ```
 
 ## About

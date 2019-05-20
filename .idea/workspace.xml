@@ -2,28 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a3ee28-8f6d-4b8a-a91f-49e21e1a9610" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Errors/ASTException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Errors/InterpreterException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Visitors/EvalVisitor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Test/TestInterpreter.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Errors/FunctionInfoException.java" afterPath="$PROJECT_DIR$/src/Errors/FunctionInfoException.java" />
-      <change beforePath="$PROJECT_DIR$/src/Errors/LexerException.java" afterPath="$PROJECT_DIR$/src/Errors/LexerException.java" />
-      <change beforePath="$PROJECT_DIR$/src/Errors/ParserException.java" afterPath="$PROJECT_DIR$/src/Errors/ParserException.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/ArgumentsList.java" afterPath="$PROJECT_DIR$/src/Language/ArgumentsList.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/BinaryExpression.java" afterPath="$PROJECT_DIR$/src/Language/BinaryExpression.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/CallExpression.java" afterPath="$PROJECT_DIR$/src/Language/CallExpression.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/Expression.java" afterPath="$PROJECT_DIR$/src/Language/Expression.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/FunctionDefinition.java" afterPath="$PROJECT_DIR$/src/Language/FunctionDefinition.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/FunctionDefinitionList.java" afterPath="$PROJECT_DIR$/src/Language/FunctionDefinitionList.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/IfExpression.java" afterPath="$PROJECT_DIR$/src/Language/IfExpression.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/ParamsList.java" afterPath="$PROJECT_DIR$/src/Language/ParamsList.java" />
-      <change beforePath="$PROJECT_DIR$/src/Language/Program.java" afterPath="$PROJECT_DIR$/src/Language/Program.java" />
-      <change beforePath="$PROJECT_DIR$/src/Parsing/ASTNode.java" afterPath="$PROJECT_DIR$/src/Parsing/ASTNode.java" />
-      <change beforePath="$PROJECT_DIR$/src/Parsing/ASTVisitor.java" afterPath="$PROJECT_DIR$/src/Parsing/ASTVisitor.java" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/src/Lexing/Lexer.java" afterPath="$PROJECT_DIR$/src/Lexing/Lexer.java" />
+      <change beforePath="$PROJECT_DIR$/src/Lexing/Token.java" afterPath="$PROJECT_DIR$/src/Lexing/Token.java" />
       <change beforePath="$PROJECT_DIR$/src/Runtime/Interpreter.java" afterPath="$PROJECT_DIR$/src/Runtime/Interpreter.java" />
       <change beforePath="$PROJECT_DIR$/src/Test/TestFunctionInfo.java" afterPath="$PROJECT_DIR$/src/Test/TestFunctionInfo.java" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java" afterPath="$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TestLexer.java" afterPath="$PROJECT_DIR$/src/Test/TestLexer.java" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TestParser.java" afterPath="$PROJECT_DIR$/src/Test/TestParser.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Carriage.java" afterPath="$PROJECT_DIR$/src/Utils/Carriage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,12 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Interpreter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Interpreter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Runtime/Interpreter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="116">
+                <caret line="108" column="22" lean-forward="true" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -48,8 +49,8 @@
       <file leaf-file-name="FunctionsInfoVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+            <state relative-caret-position="516">
+              <caret line="103" column="48" lean-forward="true" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#534#535#0" expanded="true" />
@@ -65,16 +66,6 @@
                 <element signature="e#3385#3386#0" expanded="true" />
                 <element signature="e#3440#3441#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Errors/ErrorMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -114,9 +105,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Test/TestPrintVisitor.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Errors/InterpreterError.java" />
-        <option value="$PROJECT_DIR$/src/Runtime/Interpreter.java" />
         <option value="$PROJECT_DIR$/src/Errors/ASTException.java" />
         <option value="$PROJECT_DIR$/src/Errors/LexerException.java" />
         <option value="$PROJECT_DIR$/src/Errors/ParserException.java" />
@@ -135,7 +124,14 @@
         <option value="$PROJECT_DIR$/src/Language/Program.java" />
         <option value="$PROJECT_DIR$/src/Visitors/EvalVisitor.java" />
         <option value="$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java" />
+        <option value="$PROJECT_DIR$/src/Lexing/Token.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Carriage.java" />
+        <option value="$PROJECT_DIR$/src/Test/TestLexer.java" />
         <option value="$PROJECT_DIR$/src/Test/TestFunctionInfo.java" />
+        <option value="$PROJECT_DIR$/src/Test/TestParser.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Test/TestInterpreter.java" />
+        <option value="$PROJECT_DIR$/src/Runtime/Interpreter.java" />
       </list>
     </option>
   </component>
@@ -164,8 +160,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,7 +185,7 @@
               <item name="FLanguage" type="b2602c69:ProjectViewProjectNode" />
               <item name="FLanguage" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Language" type="462c0819:PsiDirectoryNode" />
+              <item name="Lexing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FLanguage" type="b2602c69:ProjectViewProjectNode" />
@@ -212,13 +209,18 @@
               <item name="FLanguage" type="b2602c69:ProjectViewProjectNode" />
               <item name="FLanguage" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FLanguage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FLanguage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Visitors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -246,7 +248,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestFunctionInfo">
+  <component name="RunManager" selected="JUnit.TestInterpreter.testWithPrinting">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -306,6 +308,56 @@
       <option name="MAIN_CLASS_NAME" value="Test.TestFunctionInfo" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestInterpreter.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FLanguage" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestInterpreter" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestInterpreter.testWithPrinting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FLanguage" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestInterpreter" />
+      <option name="METHOD_NAME" value="testWithPrinting" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -377,14 +429,18 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Test in FLanguage" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestFunctionInfo" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestInterpreter.test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestInterpreter.testWithPrinting" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestFunctionInfo" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Test in FLanguage" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestInterpreter.testWithPrinting" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestInterpreter.test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestFunctionInfo" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Test in FLanguage" />
       </list>
     </recent_temporary>
   </component>
@@ -402,44 +458,45 @@
       <option name="presentableId" value="Default" />
       <updated>1558352971788</updated>
       <workItem from="1558352973931" duration="216000" />
-      <workItem from="1558367450475" duration="5011000" />
+      <workItem from="1558367450475" duration="5094000" />
+      <workItem from="1558378843844" duration="2882000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 05m 39s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_test - 2019.05.20 at 22h 22m 22s.xml">
+      <configuration name="TestInterpreter.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 08m 32s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 26m 22s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 10m 27s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 26m 52s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 11m 11s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 27m 59s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 11m 32s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 29m 35s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 12m 42s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 37m 17s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestFunctionInfo - 2019.05.20 at 20h 17m 22s.xml">
-      <configuration name="TestFunctionInfo" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 42m 06s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test_in_FLanguage - 2019.05.20 at 19h 25m 22s.xml">
-      <configuration name="Test in FLanguage" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 42m 29s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test_in_FLanguage - 2019.05.20 at 19h 44m 35s.xml">
-      <configuration name="Test in FLanguage" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 51m 38s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test_in_FLanguage - 2019.05.20 at 20h 04m 07s.xml">
-      <configuration name="Test in FLanguage" configurationId="JUnit" />
+    <history-entry file="TestInterpreter_testWithPrinting - 2019.05.20 at 22h 52m 14s.xml">
+      <configuration name="TestInterpreter.testWithPrinting" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5227000" />
+    <option name="totallyTimeSpent" value="8192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -458,7 +515,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -485,6 +542,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Runtime/Interpreter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#3280#3281#0" expanded="true" />
+            <element signature="e#3307#3308#0" expanded="true" />
+            <element signature="e#3385#3386#0" expanded="true" />
+            <element signature="e#3440#3441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Errors/ErrorMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/TestPrintVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -497,33 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="311">
-            <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/TestPrintVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="59" column="98" lean-forward="true" selection-start-line="59" selection-start-column="98" selection-end-line="59" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/TestParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -598,11 +666,11 @@
         <state relative-caret-position="381">
           <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#347#348#0" expanded="false" />
+            <element signature="e#388#389#0" expanded="false" />
+            <element signature="e#845#846#0" expanded="false" />
+            <element signature="e#886#887#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -612,9 +680,9 @@
         <state relative-caret-position="300">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,8 +692,8 @@
         <state relative-caret-position="240">
           <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="false" />
+            <element signature="e#418#419#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,16 +703,16 @@
         <state relative-caret-position="426">
           <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
           <folding>
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1375#1376#0" expanded="true" />
-            <element signature="e#1750#1751#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#473#474#0" expanded="false" />
+            <element signature="e#899#900#0" expanded="false" />
+            <element signature="e#945#946#0" expanded="false" />
+            <element signature="e#1328#1329#0" expanded="false" />
+            <element signature="e#1375#1376#0" expanded="false" />
+            <element signature="e#1750#1751#0" expanded="false" />
+            <element signature="e#1797#1798#0" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2211#2212#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -654,8 +722,8 @@
         <state relative-caret-position="105">
           <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -665,11 +733,11 @@
         <state relative-caret-position="388">
           <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#397#398#0" expanded="false" />
+            <element signature="e#441#442#0" expanded="false" />
+            <element signature="e#981#982#0" expanded="false" />
+            <element signature="e#1025#1026#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,11 +747,11 @@
         <state relative-caret-position="315">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#360#361#0" expanded="false" />
+            <element signature="e#406#407#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,10 +762,10 @@
           <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="false" />
+            <element signature="e#386#387#0" expanded="false" />
+            <element signature="e#901#902#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -707,18 +775,10 @@
         <state relative-caret-position="285">
           <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#484#485#0" expanded="false" />
+            <element signature="e#523#524#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Errors/ErrorMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,38 +789,6 @@
           <folding>
             <element signature="e#485#486#0" expanded="true" />
             <element signature="e#521#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#3280#3281#0" expanded="true" />
-            <element signature="e#3307#3308#0" expanded="true" />
-            <element signature="e#3385#3386#0" expanded="true" />
-            <element signature="e#3440#3441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/TestFunctionInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1076">
-          <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,11 +827,134 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestPrintVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="66" column="40" lean-forward="false" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexing/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Errors/ErrorMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Visitors/FunctionsInfoVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="103" column="48" lean-forward="true" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#3280#3281#0" expanded="true" />
+            <element signature="e#3307#3308#0" expanded="true" />
+            <element signature="e#3385#3386#0" expanded="true" />
+            <element signature="e#3440#3441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestFunctionInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="74" column="35" lean-forward="true" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Carriage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#140#141#0" expanded="true" />
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexing/Lexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestInterpreter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="126" column="45" lean-forward="false" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Runtime/Interpreter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="116">
+            <caret line="108" column="22" lean-forward="true" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

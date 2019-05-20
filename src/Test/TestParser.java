@@ -46,9 +46,9 @@ public class TestParser extends Assert {
     }
 
     @Test
-    public void testFirstParse() {
+    public void test() {
 
-        Lexer lexer = new Lexer(new Carriage<>(CharacterArray.convert(expected)));
+        Lexer lexer = new Lexer(new Carriage(expected));
 
         try {
             lexer.run();

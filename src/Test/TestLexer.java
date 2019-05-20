@@ -35,7 +35,7 @@ public class TestLexer {
 
     @Test
     public void test() {
-        Carriage<Character> carriage = new Carriage<>(CharacterArray.convert(source));
+        Carriage carriage = new Carriage(source);
         Lexer lexer = new Lexer(carriage);
 
         try {
