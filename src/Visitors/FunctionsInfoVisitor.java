@@ -4,7 +4,6 @@ import Errors.ErrorMessage;
 import Errors.FunctionInfoException;
 import Language.*;
 import Parsing.ASTNode;
-import Parsing.ASTVisitor;
 import Runtime.FunctionInfo;
 
 import java.util.ArrayList;

@@ -3,7 +3,6 @@ package Visitors;
 import Language.*;
 import Lexing.Token;
 import Parsing.ASTNode;
-import Parsing.ASTVisitor;
 
 public class PrintVisitor implements ASTVisitor<String> {
 

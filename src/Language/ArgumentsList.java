@@ -1,7 +1,7 @@
 package Language;
 
 import Parsing.ASTNode;
-import Parsing.ASTVisitor;
+import Visitors.ASTVisitor;
 
 public abstract class ArgumentsList extends ASTNode {
 

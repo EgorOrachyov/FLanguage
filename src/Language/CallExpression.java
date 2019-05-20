@@ -2,7 +2,7 @@ package Language;
 
 import Lexing.Token;
 import Parsing.ASTNode;
-import Parsing.ASTVisitor;
+import Visitors.ASTVisitor;
 
 public class CallExpression extends ASTNode {
 

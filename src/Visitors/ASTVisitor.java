@@ -1,7 +1,8 @@
-package Parsing;
+package Visitors;
 
 import Errors.ASTException;
 import Language.*;
+import Parsing.ASTNode;
 
 public interface ASTVisitor<T> {
 

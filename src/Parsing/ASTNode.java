@@ -1,5 +1,7 @@
 package Parsing;
 
+import Visitors.ASTVisitor;
+
 public abstract class ASTNode {
 
     public abstract int line();
