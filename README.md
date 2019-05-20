@@ -1,6 +1,19 @@
-# ToyLanguage
+# FLanguage
 
-Interpreter for language with simple grammar
+Functional integer expression base simple language with java based interpreter
+with basic error tracking and without byte-code generation or optimizations.
+
+## Features
+
+The following list of features describes language and interpreter core
+mechanics and main design goals:
+
+* Integer 32-bit calculations (in Java style)
+* Basic set of operations
+* If-statements support
+* Function definition support
+* Recursion
+* Variables scope
 
 ## Grammar rules
 
@@ -32,10 +45,9 @@ program      = fun-def-list expr | expr
 
 ```
 
-* __IDENTIFIER__ - ascii-7 string, composed with the 
+* _IDENTIFIER_ - ascii-7 string, composed with the 
 following regular expression \[a-z,A-Z,_\]* and has non-zero length
-
-* __NUMBER__ - positive integer value, composed with the 
+* _NUMBER_ - positive integer value, composed with the 
 following regular expression \[0-9\]* and has non-zero length
 
 Examples for identifier and number strings:
@@ -60,5 +72,52 @@ actually executed and interpreted in runtime:
 * Compare operations returns 1 or 0, whether the condition is true of false
 * If-expression executes its true branch whether the condition does not equal to
 0, otherwise it executes its false branch
-* Cll-expression performs call of defined function witt its name and arguments
+* Call-expression performs call of defined function witt its name and arguments
 * All the expressions are evaluated from right to left
+
+## Error handling
+
+There is an exhaustive list off all the error messages, which could be 
+generated in time of lexing, parsing or interpreting:
+
+* SYNTAX ERROR - program does not satisfy grammar rules
+* PARAMETER NOT FOUND - used identifier out of the scope of undefined in the function
+* FUNCTION NOT FOUND - an attempt to call undefined function
+* ARGUMENT NUMBER MISMATCH - an attempt to call function with invalid num of arguments 
+* RUNTIME ERROR - an error in time of execution
+* FUNCTION REDEFINITION - an attempt to define function with already used identifier
+* PARAM REDEFINITION - an attempt to use identifier already used in param list of the function
+
+## Program example
+
+The following programs show how the language actually looks like with 
+results of the interpreting of this programs:
+
+```
+(2+2)
+
+Output: 4
+```
+
+```c++
+g(x)={(f(x)+f((x/2)))}
+f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}
+g(10)
+
+Output: 60 
+```
+
+```
+s(x)={(x*x)}
+f(x,y,z)={((s(x)+s(y))+s(z))}
+g(x,y,z)={((x+y)+z)}
+k(x,y,z,w)={(((x*y)*z)*w)}
+f(1,g(2,3,4),k(5,6,7,0))
+
+Output: 90
+```
+
+## About
+
+This project was created and developed by [Egor Orachyov](https://github.com/EgorOrachyov)
+as a part of the JetBrains Summer Internship 2019 project: Code Insight For R Language Support (IntelliJ platform)
