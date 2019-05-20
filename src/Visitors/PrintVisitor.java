@@ -2,13 +2,14 @@ package Visitors;
 
 import Language.*;
 import Lexing.Token;
+import Parsing.ASTNode;
 import Parsing.ASTVisitor;
 
 public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
-    public String visit(Expression expression) {
-        return expression.accept(this);
+    public String visit(ASTNode node) {
+        return node.accept(this);
     }
 
     @Override
@@ -42,11 +43,6 @@ public class PrintVisitor implements ASTVisitor<String> {
     }
 
     @Override
-    public String visit(ArgumentsList arguments) {
-        return arguments.accept(this);
-    }
-
-    @Override
     public String visit(ArgumentsList.Argument arguments) {
         return arguments.arg.accept(this);
     }
@@ -69,11 +65,6 @@ public class PrintVisitor implements ASTVisitor<String> {
     }
 
     @Override
-    public String visit(ParamsList params) {
-        return params.accept(this);
-    }
-
-    @Override
     public String visit(ParamsList.OneParam params) {
         return params.param.getLexeme();
     }
@@ -91,11 +82,6 @@ public class PrintVisitor implements ASTVisitor<String> {
     }
 
     @Override
-    public String visit(FunctionDefinitionList definitionList) {
-        return definitionList.accept(this);
-    }
-
-    @Override
     public String visit(FunctionDefinitionList.Definition definitionList) {
         return definitionList.funDef.accept(this) + "\n";
     }
@@ -103,11 +89,6 @@ public class PrintVisitor implements ASTVisitor<String> {
     @Override
     public String visit(FunctionDefinitionList.DefinitionAndList definitionList) {
         return definitionList.funDef.accept(this) + "\n" + definitionList.funDefList.accept(this);
-    }
-
-    @Override
-    public String visit(Program entry) {
-        return entry.accept(this);
     }
 
     @Override
