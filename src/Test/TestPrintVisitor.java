@@ -76,7 +76,7 @@ public class TestPrintVisitor extends Assert {
                                 )
                         )
                     ,
-                        "f(x)={x<STAR>x}\ng(x)={x<PLUS>x}\ng(10)"
+                        "f(x)={(x*x)}\ng(x)={(x+x)}\ng(10)"
                 }
         };
     }

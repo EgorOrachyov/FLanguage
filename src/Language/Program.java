@@ -1,7 +1,6 @@
 package Language;
 
 import Parsing.ASTNode;
-import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
 public abstract class Program extends ASTNode {

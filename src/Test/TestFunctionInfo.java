@@ -50,7 +50,12 @@ public class TestFunctionInfo extends Assert {
                 "f(10,20)",
                 "g(x)={x}\n" +
                 "g(x,y)={(x*y)}\n" +
-                "(2+2)"
+                "(2+2)",
+                "s(x)={(x*x)}\n" +
+                "f(x,y,z)={((s(x)+s(y))+s(z))}\n" +
+                "g(x,y,z)={((x+y)+z)}\n" +
+                "k(x,y,z,w)={(((x*y)*z)*w)}\n" +
+                "f(1,g(2,3,4),k(5,6,7,8))"
         };
     }
 

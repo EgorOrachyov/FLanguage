@@ -1,7 +1,6 @@
 package Language;
 
 import Parsing.ASTNode;
-import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
 public class IfExpression extends ASTNode {

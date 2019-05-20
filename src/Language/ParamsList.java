@@ -2,7 +2,6 @@ package Language;
 
 import Lexing.Token;
 import Parsing.ASTNode;
-import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
 public abstract class ParamsList extends ASTNode {
