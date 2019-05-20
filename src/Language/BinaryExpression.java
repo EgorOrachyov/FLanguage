@@ -6,14 +6,19 @@ import Parsing.ASTVisitor;
 
 public class BinaryExpression extends ASTNode {
 
-    public final ASTNode expr1;
-    public final ASTNode expr2;
+    public final Expression expr1;
+    public final Expression expr2;
     public final Token operator;
 
-    public BinaryExpression(Language.Expression expr1, Token operator, Language.Expression expr2) {
+    public BinaryExpression(Expression expr1, Token operator, Expression expr2) {
         this.expr1 = expr1;
         this.expr2 = expr2;
         this.operator = operator;
+    }
+
+    @Override
+    public int line() {
+        return operator.getLine();
     }
 
     @Override

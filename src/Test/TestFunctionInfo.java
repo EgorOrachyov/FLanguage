@@ -22,7 +22,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -85,15 +84,16 @@ public class TestFunctionInfo extends Assert {
         Program program = parser.getProgram();
         FunctionsInfoVisitor visitor = new FunctionsInfoVisitor();
 
-        FunctionInfoException exception = program.accept(visitor);
-        if (exception != null) {
-            System.out.println(exception.getMessage());
+        try {
+            program.accept(visitor);
+        } catch (FunctionInfoException e) {
+            System.out.println(e.getMessage());
             assertTrue(true);
-        } else {
-            HashMap<String, FunctionInfo> info = visitor.getFunctionInfo();
-            for (Map.Entry<String, FunctionInfo> fun : info.entrySet()) {
-                System.out.println(fun.getKey() + " " + fun.getValue().getParams());
-            }
+        }
+
+        Map<String, FunctionInfo> info = visitor.getFunctionInfo();
+        for (Map.Entry<String, FunctionInfo> fun : info.entrySet()) {
+            System.out.println(fun.getKey() + " " + fun.getValue().getParams());
         }
     }
 

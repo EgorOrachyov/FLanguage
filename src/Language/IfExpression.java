@@ -16,6 +16,11 @@ public class IfExpression extends ASTNode {
     }
 
     @Override
+    public int line() {
+        return condition.line();
+    }
+
+    @Override
     public <T> T accept(ASTVisitor<T> visitor) {
         return visitor.visit(this);
     }

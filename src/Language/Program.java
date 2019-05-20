@@ -14,6 +14,11 @@ public abstract class Program extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return expression.line();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -27,6 +32,11 @@ public abstract class Program extends ASTNode {
         public BodyDefinitionList(FunctionDefinitionList definitionList, Expression body) {
             expression = body;
             definitions = definitionList;
+        }
+
+        @Override
+        public int line() {
+            return definitions.line();
         }
 
         @Override

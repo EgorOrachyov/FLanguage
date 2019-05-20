@@ -17,6 +17,11 @@ public abstract class Expression extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return token.getLine();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -30,6 +35,11 @@ public abstract class Expression extends ASTNode {
         public Num(Token token) {
             this.token = token;
             this.num = Integer.valueOf(token.getLexeme());
+        }
+
+        @Override
+        public int line() {
+            return token.getLine();
         }
 
         @Override
@@ -47,6 +57,11 @@ public abstract class Expression extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return statement.line();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -61,6 +76,11 @@ public abstract class Expression extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return statement.line();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -72,6 +92,11 @@ public abstract class Expression extends ASTNode {
 
         public If(IfExpression expression) {
             this.statement = expression;
+        }
+
+        @Override
+        public int line() {
+            return statement.line();
         }
 
         @Override

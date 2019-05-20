@@ -17,6 +17,11 @@ public class FunctionDefinition extends ASTNode {
     }
 
     @Override
+    public int line() {
+        return name.getLine();
+    }
+
+    @Override
     public <T> T accept(ASTVisitor<T> visitor) {
         return visitor.visit(this);
     }

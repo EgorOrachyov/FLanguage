@@ -3,7 +3,7 @@ package Errors;
 import Language.FunctionDefinition;
 import Visitors.PrintVisitor;
 
-public class FunctionInfoException extends RuntimeException {
+public class FunctionInfoException extends ASTException {
 
     private final String message;
 
@@ -11,6 +11,7 @@ public class FunctionInfoException extends RuntimeException {
         this.message = message + " " + (new PrintVisitor().visit(function)) + ":" + function.name.getLine();
     }
 
+    @Override
     public String getMessage() {
         return message;
     }

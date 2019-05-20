@@ -14,6 +14,11 @@ public abstract class FunctionDefinitionList extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return funDef.line();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -27,6 +32,11 @@ public abstract class FunctionDefinitionList extends ASTNode {
         public DefinitionAndList(FunctionDefinition funDef, FunctionDefinitionList funDefList) {
             this.funDef = funDef;
             this.funDefList = funDefList;
+        }
+
+        @Override
+        public int line() {
+            return funDef.line();
         }
 
         @Override

@@ -1,43 +1,44 @@
 package Parsing;
 
+import Errors.ASTException;
 import Language.*;
 
 public interface ASTVisitor<T> {
 
-    public T visit(ASTNode node);
+    public T visit(ASTNode node) throws ASTException;
 
-    public T visit(Expression.Var expression);
+    public T visit(Expression.Var expression) throws ASTException;
 
-    public T visit(Expression.Num expression);
+    public T visit(Expression.Num expression) throws ASTException;
 
-    public T visit(Expression.Binary expression);
+    public T visit(Expression.Binary expression) throws ASTException;
 
-    public T visit(Expression.Call expression);
+    public T visit(Expression.Call expression) throws ASTException;
 
-    public T visit(Expression.If expression);
+    public T visit(Expression.If expression) throws ASTException;
 
-    public T visit(BinaryExpression expression);
+    public T visit(BinaryExpression expression) throws ASTException;
 
-    public T visit(ArgumentsList.Argument arguments);
+    public T visit(ArgumentsList.Argument arguments) throws ASTException;
 
-    public T visit(ArgumentsList.ArgumentAndList arguments);
+    public T visit(ArgumentsList.ArgumentAndList arguments) throws ASTException;
 
-    public T visit(IfExpression expression);
+    public T visit(IfExpression expression) throws ASTException;
 
-    public T visit(CallExpression call);
+    public T visit(CallExpression call) throws ASTException;
 
-    public T visit(ParamsList.OneParam params);
+    public T visit(ParamsList.OneParam params) throws ASTException;
 
-    public T visit(ParamsList.OneParamAndList params);
+    public T visit(ParamsList.OneParamAndList params) throws ASTException;
 
-    public T visit(FunctionDefinition function);
+    public T visit(FunctionDefinition function) throws ASTException;
 
-    public T visit(FunctionDefinitionList.Definition definitionList);
+    public T visit(FunctionDefinitionList.Definition definitionList) throws ASTException;
 
-    public T visit(FunctionDefinitionList.DefinitionAndList definitionList);
+    public T visit(FunctionDefinitionList.DefinitionAndList definitionList) throws ASTException;
 
-    public T visit(Program.Body program);
+    public T visit(Program.Body program) throws ASTException;
 
-    public T visit(Program.BodyDefinitionList program);
+    public T visit(Program.BodyDefinitionList program) throws ASTException;
 
 }

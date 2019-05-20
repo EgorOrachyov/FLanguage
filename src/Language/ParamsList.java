@@ -15,6 +15,11 @@ public abstract class ParamsList extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return param.getLine();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -28,6 +33,11 @@ public abstract class ParamsList extends ASTNode {
         public OneParamAndList(Token param, ParamsList list) {
             this.param = param;
             this.list = list;
+        }
+
+        @Override
+        public int line() {
+            return param.getLine();
         }
 
         @Override

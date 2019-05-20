@@ -1,6 +1,6 @@
 package Errors;
 
-public class ParserException extends RuntimeException {
+public class ParserException extends ASTException {
 
     private final String message;
 

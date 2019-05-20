@@ -14,6 +14,11 @@ public abstract class ArgumentsList extends ASTNode {
         }
 
         @Override
+        public int line() {
+            return arg.line();
+        }
+
+        @Override
         public <T> T accept(ASTVisitor<T> visitor) {
             return visitor.visit(this);
         }
@@ -27,6 +32,11 @@ public abstract class ArgumentsList extends ASTNode {
         public ArgumentAndList(Expression arg, ArgumentsList list) {
             this.arg = arg;
             this.list = list;
+        }
+
+        @Override
+        public int line() {
+            return arg.line();
         }
 
         @Override
