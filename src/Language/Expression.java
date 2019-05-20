@@ -1,56 +1,83 @@
 package Language;
 
 import Lexing.Token;
-import Lexing.TokenType;
 import Parsing.ASTNode;
-import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-public class Expression extends ASTNode {
+public abstract class Expression extends ASTNode {
 
-    public enum Type {
-        IDENTIFIER,
-        NUMBER,
-        BIN_EXPR,
-        IF_EXPR,
-        CALL_EXPR
-    }
+    public static class Var extends Expression {
 
-    public Type type;
-    public final Token token;
-    public final ASTNode expression;
+        public final Token token;
+        public final String name;
 
-    public Expression(Token t) {
-        token = t;
-        expression = null;
+        public Var(Token token) {
+            this.token = token;
+            this.name = token.getLexeme();
+        }
 
-        if (t.getType().equals(TokenType.IDENTIFIER)) {
-            type = Type.IDENTIFIER;
-        } else {
-            type = Type.NUMBER;
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
         }
     }
 
-    public Expression(BinaryExpression e) {
-        type = Type.BIN_EXPR;
-        token = null;
-        expression = e;
+    public static class Num extends Expression {
+
+        public final Token token;
+        public final int num;
+
+        public Num(Token token) {
+            this.token = token;
+            this.num = Integer.valueOf(token.getLexeme());
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public Expression(CallExpression e) {
-        type = Type.CALL_EXPR;
-        token = null;
-        expression = e;
+    public static class Binary extends Expression {
+
+        public final BinaryExpression statement;
+
+        public Binary(BinaryExpression expression) {
+            this.statement = expression;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public Expression(IfExpression e) {
-        type = Type.IF_EXPR;
-        token = null;
-        expression = e;
+    public static class Call extends Expression {
+
+        public final CallExpression statement;
+
+        public Call(CallExpression expression) {
+            this.statement = expression;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    @Override
-    public <T> T accept(ASTVisitor<T> visitor) {
-        return visitor.visit(this);
+    public static class If extends Expression {
+
+        public final IfExpression statement;
+
+        public If(IfExpression expression) {
+            this.statement = expression;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
+
 }

@@ -4,31 +4,36 @@ import Parsing.ASTNode;
 import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-public class ArgumentsList extends ASTNode {
+public abstract class ArgumentsList extends ASTNode {
 
-    public enum Type {
-        EXPRESSION,
-        EXPRESSION_AND_LIST
+    public static class Argument extends ArgumentsList {
+
+        public final Expression arg;
+
+        public Argument(Expression arg) {
+            this.arg = arg;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public final Type type;
-    public final Expression expression;
-    public final ArgumentsList list;
+    public static class ArgumentAndList extends ArgumentsList {
 
-    public ArgumentsList(Language.Expression e) {
-        type = ArgumentsList.Type.EXPRESSION;
-        expression = e;
-        list = null;
+        public final Expression arg;
+        public final ArgumentsList list;
+
+        public ArgumentAndList(Expression arg, ArgumentsList list) {
+            this.arg = arg;
+            this.list = list;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public ArgumentsList(Language.Expression e, ArgumentsList l) {
-        type = ArgumentsList.Type.EXPRESSION_AND_LIST;
-        expression = e;
-        list = l;
-    }
-
-    @Override
-    public <T> T accept(ASTVisitor<T> visitor) {
-        return visitor.visit(this);
-    }
 }

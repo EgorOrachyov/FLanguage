@@ -10,10 +10,10 @@ public class IfExpression extends ASTNode {
     public final Expression ifTrue;
     public final Expression ifFalse;
 
-    public IfExpression(Language.Expression c, Language.Expression t, Language.Expression f) {
-        condition = c;
-        ifTrue = t;
-        ifFalse = f;
+    public IfExpression(Language.Expression condition, Language.Expression ifTrue, Language.Expression ifFalse) {
+        this.condition = condition;
+        this.ifTrue = ifTrue;
+        this.ifFalse = ifFalse;
     }
 
     @Override

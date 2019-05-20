@@ -4,31 +4,36 @@ import Parsing.ASTNode;
 import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-public class FunctionDefinitionList extends ASTNode {
+public abstract class FunctionDefinitionList extends ASTNode {
 
-    public enum Type {
-        ONE,
-        ONE_AND_LIST
+    public static class Definition extends FunctionDefinitionList {
+
+        public final FunctionDefinition funDef;
+
+        public Definition(FunctionDefinition funDef) {
+            this.funDef = funDef;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public final Type type;
-    public final FunctionDefinition function;
-    public final FunctionDefinitionList list;
+    public static class DefinitionAndList extends FunctionDefinitionList {
 
-    public FunctionDefinitionList(FunctionDefinition definition) {
-        type = Type.ONE;
-        function = definition;
-        list = null;
+        public final FunctionDefinition funDef;
+        public final FunctionDefinitionList funDefList;
+
+        public DefinitionAndList(FunctionDefinition funDef, FunctionDefinitionList funDefList) {
+            this.funDef = funDef;
+            this.funDefList = funDefList;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public FunctionDefinitionList(FunctionDefinition definition, FunctionDefinitionList others) {
-        type = Type.ONE_AND_LIST;
-        function = definition;
-        list = others;
-    }
-
-    @Override
-    public <T> T accept(ASTVisitor<T> visitor) {
-        return visitor.visit(this);
-    }
 }

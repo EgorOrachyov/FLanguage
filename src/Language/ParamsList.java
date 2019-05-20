@@ -5,31 +5,36 @@ import Parsing.ASTNode;
 import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-public class ParamsList extends ASTNode {
+public abstract class ParamsList extends ASTNode {
 
-    public enum Type {
-        IDENTIFIER,
-        IDENTIFIER_AND_LIST
+    public static class OneParam extends ParamsList {
+
+        public final Token param;
+
+        public OneParam(Token param) {
+            this.param = param;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public final Type type;
-    public final Token token;
-    public final ParamsList list;
+    public static class OneParamAndList extends ParamsList {
 
-    public ParamsList(Token t) {
-        type = Type.IDENTIFIER;
-        token = t;
-        list = null;
+        public final Token param;
+        public final ParamsList list;
+
+        public OneParamAndList(Token param, ParamsList list) {
+            this.param = param;
+            this.list = list;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public ParamsList(Token t, ParamsList l) {
-        type = Type.IDENTIFIER_AND_LIST;
-        token = t;
-        list = l;
-    }
-
-    @Override
-    public <T> T accept(ASTVisitor<T> visitor) {
-        return visitor.visit(this);
-    }
 }

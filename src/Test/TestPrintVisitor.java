@@ -25,38 +25,38 @@ public class TestPrintVisitor extends Assert {
     public static Object[] programs() {
         return new Object[][] {
                 {
-                        new Program(
-                                new FunctionDefinitionList(
+                        new Program.BodyDefinitionList(
+                                new FunctionDefinitionList.DefinitionAndList(
                                         new FunctionDefinition(
                                                 new Token(TokenType.IDENTIFIER, "f", 0),
-                                                new ParamsList(
+                                                new ParamsList.OneParam(
                                                         new Token(TokenType.IDENTIFIER, "x", 0)
                                                 ),
-                                                new Expression(
+                                                new Expression.Binary(
                                                         new BinaryExpression(
-                                                                new Expression(
+                                                                new Expression.Var(
                                                                         new Token(TokenType.IDENTIFIER, "x", 0)
                                                                 ),
                                                                 new Token(TokenType.STAR, "*", 0),
-                                                                new Expression(
+                                                                new Expression.Var(
                                                                         new Token(TokenType.IDENTIFIER, "x", 0)
                                                                 )
                                                         )
                                                 )
                                         ),
-                                        new FunctionDefinitionList(
+                                        new FunctionDefinitionList.Definition(
                                                 new FunctionDefinition(
                                                         new Token(TokenType.IDENTIFIER, "g", 1),
-                                                        new ParamsList(
+                                                        new ParamsList.OneParam(
                                                                 new Token(TokenType.IDENTIFIER, "x", 1)
                                                         ),
-                                                        new Expression(
+                                                        new Expression.Binary(
                                                                 new BinaryExpression(
-                                                                        new Expression(
+                                                                        new Expression.Var(
                                                                                 new Token(TokenType.IDENTIFIER, "x", 1)
                                                                         ),
                                                                         new Token(TokenType.PLUS, "+", 1),
-                                                                        new Expression(
+                                                                        new Expression.Var(
                                                                                 new Token(TokenType.IDENTIFIER, "x", 1)
                                                                         )
                                                                 )
@@ -64,11 +64,11 @@ public class TestPrintVisitor extends Assert {
                                                 )
                                         )
                                 ),
-                                new Expression(
+                                new Expression.Call(
                                         new CallExpression(
                                                 new Token(TokenType.IDENTIFIER, "g", 2),
-                                                new ArgumentsList(
-                                                        new Expression(
+                                                new ArgumentsList.Argument(
+                                                        new Expression.Num(
                                                                 new Token(TokenType.NUMBER, "10", 2)
                                                         )
                                                 )

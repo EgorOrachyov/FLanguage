@@ -7,13 +7,33 @@ import Parsing.ASTVisitor;
 public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
-    public String visit(Language.Expression expression) {
-        if (expression.type == Expression.Type.IDENTIFIER ||
-            expression.type == Expression.Type.NUMBER) {
-            return expression.token.getLexeme();
-        } else {
-            return expression.expression.accept(this);
-        }
+    public String visit(Expression expression) {
+        return expression.accept(this);
+    }
+
+    @Override
+    public String visit(Expression.If expression) {
+        return expression.statement.accept(this);
+    }
+
+    @Override
+    public String visit(Expression.Num expression) {
+        return expression.token.getLexeme();
+    }
+
+    @Override
+    public String visit(Expression.Var expression) {
+        return expression.token.getLexeme();
+    }
+
+    @Override
+    public String visit(Expression.Call expression) {
+        return expression.statement.accept(this);
+    }
+
+    @Override
+    public String visit(Expression.Binary expression) {
+        return expression.statement.accept(this);
     }
 
     @Override
@@ -23,16 +43,22 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(ArgumentsList arguments) {
-        if (arguments.type == ArgumentsList.Type.EXPRESSION) {
-            return arguments.expression.accept(this);
-        } else {
-            return arguments.expression.accept(this) + "," + arguments.list.accept(this);
-        }
+        return arguments.accept(this);
+    }
+
+    @Override
+    public String visit(ArgumentsList.Argument arguments) {
+        return arguments.arg.accept(this);
+    }
+
+    @Override
+    public String visit(ArgumentsList.ArgumentAndList arguments) {
+        return arguments.arg.accept(this) + "," + arguments.list.accept(this);
     }
 
     @Override
     public String visit(CallExpression call) {
-        return call.token.getLexeme() + '(' + call.list.accept(this) + ")";
+        return call.name.getLexeme() + '(' + call.arguments.accept(this) + ")";
     }
 
     @Override
@@ -44,36 +70,54 @@ public class PrintVisitor implements ASTVisitor<String> {
 
     @Override
     public String visit(ParamsList params) {
-        if (params.type == ParamsList.Type.IDENTIFIER) {
-            return params.token.getLexeme();
-        } else {
-            return params.token.getLexeme() + "," + params.list.accept(this);
-        }
+        return params.accept(this);
+    }
+
+    @Override
+    public String visit(ParamsList.OneParam params) {
+        return params.param.getLexeme();
+    }
+
+    @Override
+    public String visit(ParamsList.OneParamAndList params) {
+        return params.param.getLexeme() + "," + params.list.accept(this);
     }
 
     @Override
     public String visit(FunctionDefinition function) {
-        return function.identifier.getLexeme() + "(" +
+        return function.name.getLexeme() + "(" +
                function.paramsList.accept(this) + ")={" +
                function.funBody.accept(this) + "}";
     }
 
     @Override
     public String visit(FunctionDefinitionList definitionList) {
-        if (definitionList.type == FunctionDefinitionList.Type.ONE) {
-            return definitionList.function.accept(this) + "\n";
-        } else {
-            return definitionList.function.accept(this) + "\n" + definitionList.list.accept(this);
-        }
+        return definitionList.accept(this);
+    }
+
+    @Override
+    public String visit(FunctionDefinitionList.Definition definitionList) {
+        return definitionList.funDef.accept(this) + "\n";
+    }
+
+    @Override
+    public String visit(FunctionDefinitionList.DefinitionAndList definitionList) {
+        return definitionList.funDef.accept(this) + "\n" + definitionList.funDefList.accept(this);
     }
 
     @Override
     public String visit(Program entry) {
-        if (entry.type.equals(Program.Type.EXPRESSION)) {
-            return entry.expression.accept(this);
-        } else {
-            return entry.definitions.accept(this) + entry.expression.accept(this);
-        }
+        return entry.accept(this);
+    }
+
+    @Override
+    public String visit(Program.Body program) {
+        return program.expression.accept(this);
+    }
+
+    @Override
+    public String visit(Program.BodyDefinitionList program) {
+        return program.definitions.accept(this) + program.expression.accept(this);
     }
 
     private String operator(Token token) {

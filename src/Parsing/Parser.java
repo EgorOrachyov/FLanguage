@@ -26,11 +26,11 @@ public class Parser extends ParserBase {
         try {
             FunctionDefinitionList funDefList = functionDefinitionList();
             Expression body = expression();
-            program = new Program(funDefList, body);
+            program = new Program.BodyDefinitionList(funDefList, body);
         } catch (ParserException e) {
             setIndex(index);
             Expression body = expression();
-            program = new Program(body);
+            program = new Program.Body(body);
         }
 
         if (!end()) {
@@ -46,10 +46,10 @@ public class Parser extends ParserBase {
 
         try {
             FunctionDefinitionList defList = functionDefinitionList();
-            return new FunctionDefinitionList(funDef, defList);
+            return new FunctionDefinitionList.DefinitionAndList(funDef, defList);
         } catch (ParserException e) {
             setIndex(index);
-            return new FunctionDefinitionList(funDef);
+            return new FunctionDefinitionList.Definition(funDef);
         }
     }
 
@@ -83,21 +83,21 @@ public class Parser extends ParserBase {
         if (checkType(TokenType.COMMA)) {
             advance();
             ParamsList params = paramsList();
-            return new ParamsList(var, params);
+            return new ParamsList.OneParamAndList(var, params);
         } else {
-            return new ParamsList(var);
+            return new ParamsList.OneParam(var);
         }
     }
 
     private Expression expression() throws ParserException {
         if (checkType(TokenType.LEFT_BRACKET)) {
             BinaryExpression binExpr = binaryExpression();
-            return new Expression(binExpr);
+            return new Expression.Binary(binExpr);
         }
 
         if (checkType(TokenType.LEFT_SQUARE_BRACKET)) {
             IfExpression ifExpr = ifExpression();
-            return new Expression(ifExpr);
+            return new Expression.If(ifExpr);
         }
 
         if (checkType(TokenType.IDENTIFIER)) {
@@ -106,21 +106,21 @@ public class Parser extends ParserBase {
             if (checkType(TokenType.LEFT_BRACKET)) {
                 setIndex(index);
                 CallExpression callExpr = callExpression();
-                return new Expression(callExpr);
+                return new Expression.Call(callExpr);
             } else {
-                return new Expression(identifier);
+                return new Expression.Var(identifier);
             }
         }
 
         if (checkType(TokenType.NUMBER)) {
             Token num = advance();
-            return new Expression(num);
+            return new Expression.Num(num);
         }
 
         matchAny(TokenType.MINUS);
         if (checkType(TokenType.NUMBER)) {
             Token num = advance();
-            return new Expression(new Token(TokenType.NUMBER, "-" + num.getLexeme(), num.getLine()));
+            return new Expression.Num(new Token(TokenType.NUMBER, "-" + num.getLexeme(), num.getLine()));
         } else {
             throw new ParserException(ErrorMessage.SYNTAX_ERROR);
         }
@@ -187,9 +187,9 @@ public class Parser extends ParserBase {
         if (checkType(TokenType.COMMA)) {
             advance();
             ArgumentsList list = argumentsList();
-            return new ArgumentsList(argument, list);
+            return new ArgumentsList.ArgumentAndList(argument, list);
         } else {
-            return new ArgumentsList(argument);
+            return new ArgumentsList.Argument(argument);
         }
     }
 

@@ -11,10 +11,10 @@ public class BinaryExpression extends ASTNode {
     public final ASTNode expr2;
     public final Token operator;
 
-    public BinaryExpression(Language.Expression e1, Token o, Language.Expression e2) {
-        expr1 = e1;
-        expr2 = e2;
-        operator = o;
+    public BinaryExpression(Language.Expression expr1, Token operator, Language.Expression expr2) {
+        this.expr1 = expr1;
+        this.expr2 = expr2;
+        this.operator = operator;
     }
 
     @Override

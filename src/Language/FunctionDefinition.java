@@ -2,19 +2,18 @@ package Language;
 
 import Lexing.Token;
 import Parsing.ASTNode;
-import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
 public class FunctionDefinition extends ASTNode {
 
-    public final Token identifier;
+    public final Token name;
     public final ParamsList paramsList;
     public final Expression funBody;
 
-    public FunctionDefinition(Token id, ParamsList params, Expression body) {
-        identifier = id;
-        paramsList = params;
-        funBody = body;
+    public FunctionDefinition(Token name, ParamsList paramsList, Expression funBody) {
+        this.name = name;
+        this.paramsList = paramsList;
+        this.funBody = funBody;
     }
 
     @Override

@@ -4,31 +4,36 @@ import Parsing.ASTNode;
 import Parsing.ASTNodeType;
 import Parsing.ASTVisitor;
 
-public class Program extends ASTNode {
+public abstract class Program extends ASTNode {
 
-    public enum Type {
-        EXPRESSION,
-        DEF_LIST_AND_EXPRESSION
+    public static class Body extends Program {
+
+        public final Expression expression;
+
+        public Body(Expression body) {
+            expression = body;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public final Type type;
-    public final FunctionDefinitionList definitions;
-    public final Expression expression;
+    public static class BodyDefinitionList extends Program {
 
-    public Program(Expression main) {
-        type = Type.EXPRESSION;
-        definitions = null;
-        expression = main;
+        public final FunctionDefinitionList definitions;
+        public final Expression expression;
+
+        public BodyDefinitionList(FunctionDefinitionList definitionList, Expression body) {
+            expression = body;
+            definitions = definitionList;
+        }
+
+        @Override
+        public <T> T accept(ASTVisitor<T> visitor) {
+            return visitor.visit(this);
+        }
     }
 
-    public Program(FunctionDefinitionList list, Expression main) {
-        type = Type.DEF_LIST_AND_EXPRESSION;
-        definitions = list;
-        expression = main;
-    }
-
-    @Override
-    public <T> T accept(ASTVisitor<T> visitor) {
-        return visitor.visit(this);
-    }
 }
