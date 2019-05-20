@@ -93,13 +93,13 @@ generated in time of lexing, parsing or interpreting:
 The following programs show how the language actually looks like with 
 results of the interpreting of this programs:
 
-```
+```java
 (2+2)
 
 Output: 4
 ```
 
-```c++
+```java
 g(x)={(f(x)+f((x/2)))}
 f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}
 g(10)
@@ -107,7 +107,7 @@ g(10)
 Output: 60 
 ```
 
-```
+```java
 s(x)={(x*x)}
 f(x,y,z)={((s(x)+s(y))+s(z))}
 g(x,y,z)={((x+y)+z)}
