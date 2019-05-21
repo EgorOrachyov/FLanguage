@@ -3,7 +3,7 @@ package Errors;
 import Language.FunctionDefinition;
 import Visitors.PrintVisitor;
 
-public class FunctionInfoException extends ASTException {
+public class FunctionInfoException extends LangException {
 
     private final String message;
 

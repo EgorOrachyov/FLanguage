@@ -1,6 +1,6 @@
 package Errors;
 
-public class ParserException extends ASTException {
+public class ParserException extends LangException {
 
     private final String message;
 

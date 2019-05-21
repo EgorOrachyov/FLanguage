@@ -2,7 +2,7 @@ package Errors;
 
 import Lexing.Token;
 
-public class InterpreterException extends ASTException {
+public class InterpreterException extends LangException {
 
     private final String message;
 

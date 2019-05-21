@@ -1,6 +1,6 @@
 package Errors;
 
-public class LexerException extends ASTException {
+public class LexerException extends LangException {
 
     private final String message;
 

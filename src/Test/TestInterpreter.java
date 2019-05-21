@@ -1,15 +1,7 @@
 package Test;
 
-import Errors.FunctionInfoException;
-import Errors.InterpreterException;
-import Errors.LexerException;
-import Errors.ParserException;
-import Language.Program;
-import Lexing.Lexer;
-import Parsing.Parser;
-import Utils.Carriage;
-import Visitors.EvalVisitor;
-import Visitors.FunctionsInfoVisitor;
+import Errors.*;
+import Runtime.Interpreter;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,95 +40,31 @@ public class TestInterpreter extends Assert {
 
     @Test
     public void test() {
-        Lexer lexer = new Lexer(new Carriage(input));
-
         try {
-            lexer.run();
-        } catch (LexerException e) {
+            Interpreter interpreter = new Interpreter(input);
+            interpreter.prepare();
+            interpreter.run();
+            Integer result = interpreter.getResult();
+            assertEquals(expected, result.toString());
+        } catch (LangException e) {
             assertEquals(expected, e.getMessage());
-            return;
         }
-
-        Parser parser = new Parser(lexer.getTokens());
-
-        try {
-            parser.run();
-        } catch (ParserException e) {
-            assertEquals(expected, e.getMessage());
-            return;
-        }
-
-        Program program = parser.getProgram();
-        FunctionsInfoVisitor functionsInfoVisitor = new FunctionsInfoVisitor();
-
-        try {
-            functionsInfoVisitor.visit(program);
-        } catch (FunctionInfoException e) {
-            assertEquals(expected, e.getMessage());
-            return;
-        }
-
-        EvalVisitor evalVisitor = new EvalVisitor(functionsInfoVisitor.getFunctionInfo());
-        Integer result = 0;
-
-        try {
-            result = evalVisitor.visit(program);
-        } catch (InterpreterException e) {
-            assertEquals(expected, e.getMessage());
-            return;
-        }
-
-        assertEquals(expected, result.toString());
     }
 
     @Test
     public void testWithPrinting() {
         System.out.print("\n" + input + "\n\n");
-
-        Lexer lexer = new Lexer(new Carriage(input));
-
         try {
-            lexer.run();
-        } catch (LexerException e) {
+            Interpreter interpreter = new Interpreter(input);
+            interpreter.prepare();
+            interpreter.run();
+            Integer result = interpreter.getResult();
+            assertEquals(expected, result.toString());
+            System.out.println("Output: " + result);
+        } catch (LangException e) {
             assertEquals(expected, e.getMessage());
             System.out.println(e.getMessage());
-            return;
         }
-
-        Parser parser = new Parser(lexer.getTokens());
-
-        try {
-            parser.run();
-        } catch (ParserException e) {
-            assertEquals(expected, e.getMessage());
-            System.out.println(e.getMessage());
-            return;
-        }
-
-        Program program = parser.getProgram();
-        FunctionsInfoVisitor functionsInfoVisitor = new FunctionsInfoVisitor();
-
-        try {
-            functionsInfoVisitor.visit(program);
-        } catch (FunctionInfoException e) {
-            assertEquals(expected, e.getMessage());
-            System.out.println(e.getMessage());
-            return;
-        }
-
-        EvalVisitor evalVisitor = new EvalVisitor(functionsInfoVisitor.getFunctionInfo());
-        Integer result = 0;
-
-        try {
-            result = evalVisitor.visit(program);
-        } catch (InterpreterException e) {
-            assertEquals(expected, e.getMessage());
-            System.out.println(e.getMessage());
-            return;
-        }
-
-        assertEquals(expected, result.toString());
-        System.out.println("Output: " + result);
     }
 
 }
