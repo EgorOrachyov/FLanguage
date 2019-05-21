@@ -15,10 +15,54 @@ mechanics and main design goals:
 * Recursion
 * Variables scope
 
+## Console application
+
+This application is located in src/Application/Main.java and it evolves as 
+simple runner of programs, stored in txt files. The following examples
+illustrates that:
+
+```
++--------------------------------------------+
+|            FLanguage interpreter           |
++--------------------------------------------+
+| Enter file name with program to get result |
+| of its execution. Enter '__exit__' to exit |
+| the console application.                   |
++--------------------------------------------+
+
+Enter file name with program: unknownfile
+File not found
+```
+
+```
+Enter file name with program: resource/example1.txt
+g(x)={(f(x)+f((x/2)))}
+f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}
+g(10)
+
+Output: 60
+```
+
+```
+Enter file name with program: resource/example5.txt
+g(a,b)={(a/b)}
+g(10,0)
+
+RUNTIME ERROR (a/b):1
+```
+
+```
+Enter file name with program: __exit__
+
+Process finished with exit code 0
+```
+
+All examples of files, mentioned bellow, are located in the resource folder. 
+
 ## Grammar rules
 
 The following lines of code provides exhaustive grammar description
-for the language used to create a simple high level calculator:
+for the language:
 
 ```
 operation    = "+" | "-" | "*" | "/" | "%" | ">" | "<" | "="
@@ -72,7 +116,7 @@ actually executed and interpreted in runtime:
 * Compare operations returns 1 or 0, whether the condition is true of false
 * If-expression executes its true branch whether the condition does not equal to
 0, otherwise it executes its false branch
-* Call-expression performs call of defined function witt its name and arguments
+* Call-expression performs call of defined function with its name and arguments
 * All the expressions are evaluated from right to left
 
 ## Error handling

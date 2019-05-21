@@ -12,10 +12,10 @@ import java.util.Map;
 
 public class Interpreter {
 
-    Integer result;
-    String source;
-    Program program;
-    Map<String, FunctionInfo> functions;
+    private Integer result;
+    private String source;
+    private Program program;
+    private Map<String, FunctionInfo> functions;
 
     public Interpreter(String source) {
         this.source = source;
