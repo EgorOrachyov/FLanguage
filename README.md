@@ -226,6 +226,12 @@ f(10)
 Output: 55
 ```
 
+## How to build and run the application
+
+This project was created in the JetBrains IntelliJ IDEA 2017 (java 9).
+You can download the repository and open it as a simple project. To run
+console application you need to execute Application.Main class. 
+
 ## About
 
 This project was created and developed by [Egor Orachyov](https://github.com/EgorOrachyov)
