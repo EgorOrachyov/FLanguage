@@ -35,7 +35,7 @@ public class Carriage {
     }
 
     public String subString(int l, int r) {
-        if (l < r && r < buffer.length) {
+        if (l < r && r <= buffer.length) {
             StringBuilder string = new StringBuilder(r - l);
             for (int i = l; i < r; i++) {
                 string.append(buffer[i]);
